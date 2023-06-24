@@ -5,7 +5,7 @@
 *.pyc
 
 # Ignore virtual environment files
-venv/
+.venv/
 env/
 
 # Ignore the local development settings file
