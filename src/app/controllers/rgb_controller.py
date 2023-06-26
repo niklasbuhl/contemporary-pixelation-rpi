@@ -20,7 +20,6 @@ class RGB():
 	def __init__(self):
 
 		print("Init RGB Controller")
-
 		print(f"RGB_ROWS {RGB_ROWS}")
 		print(f"RGB_CHAIN_LENGTH {RGB_CHAIN_LENGTH}")
 		print(f"RGB_PARALLEL {RGB_PARALLEL}")
@@ -40,6 +39,11 @@ class RGB():
 			self.matrix = RGBMatrix(options = options)
 			self.frame_canvas = self.matrix.CreateFrameCanvas()
 
+			# Set "on" pixel
+			self.frame_canvas.SetPixel(0,0,0,255,0)
+			self.sync()
+			# self.frame_canvas = self.matrix.SwapOnVSync(self.frame_canvas)
+
 		else:
 			self.matrix = "matrix"
 
@@ -49,15 +53,25 @@ class RGB():
 		# Test Animation
 		self.ta = TestAnimation(self.conn_bottom, self.matrix)
 
-	def set_pixel(self):
+	def set_pixel(self, x, y, c):
 		print("set pixel")
 
 	def set_frame(self):
 		print("set frame")
+
+	def get_frame(self):
+		print(self.frame_canvas)
 	
 	def clear_frame(self):
 		print("clear frame")
 
+		if(PLATFORM == "rpi"):
+			self.frame_canvas.Clear()
+			self.sync()
+
+	def sync():
+		self.frame_canvas = self.matrix.SwapOnVSync(self.frame_canvas)
+	
 	def start_animation(self):
 		try:
 			if not self.ta.is_alive():

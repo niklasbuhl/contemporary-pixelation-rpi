@@ -16,9 +16,8 @@
 
 ## Access through ngrok
 
-tcp://2.tcp.eu.ngrok.io:12705
-`ssh -p 12345 user@0.tcp.ngrok.io`
+`ssh pi@<number>.tcp.eu.ngrok.io -p <port>`
 
-`ssh -p 12705 pi@0.tcp.ngrok.io`
+## Install requirements
 
-`ssh pi@0.tcp.eu.ngrok.io -p 12705`
+`pip install -r requirements.txt`
