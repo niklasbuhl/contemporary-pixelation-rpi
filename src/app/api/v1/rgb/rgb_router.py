@@ -13,7 +13,7 @@ def rgb_root():
 
 # Set Pixel
 @router.post("/pixel")
-def rgb_set_pixel(request: Request):
+async def rgb_set_pixel(request: Request):
 	data = await request.json()
 
 	x = data['x']
