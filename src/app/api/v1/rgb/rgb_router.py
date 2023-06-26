@@ -32,6 +32,12 @@ async def rgb_set_pixel(request: Request):
 def rgb_set_frame():
 	rgb.set_frame()
 
+
+# Sync Frame
+@router.post("/sync")
+def rgb_sync():
+	rgb.sync()
+
 # Start
 @router.post("/animation/start")
 def rgb_animation_start():
