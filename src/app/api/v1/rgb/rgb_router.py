@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Request
 from ....controllers.rgb_controller import rgb
+from acrylic import Color
 
 router = APIRouter(
     prefix="/rgb"
@@ -12,8 +13,18 @@ def rgb_root():
 
 # Set Pixel
 @router.post("/pixel")
-def rgb_set_pixel():
-	rgb.set_pixel()
+def rgb_set_pixel(request: Request):
+	data = await request.json()
+
+	x = data['x']
+	y = data['x']
+	r = data['red']
+	g = data['green']
+	b = data['blue']
+
+	c = Color(r,g,b)
+
+	rgb.set_pixel(x, y, c)
 
 # Set Frame
 @router.post("/frame")

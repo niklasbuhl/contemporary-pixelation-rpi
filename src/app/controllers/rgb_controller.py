@@ -1,7 +1,7 @@
 from decouple import config
 import multiprocessing as mp
-
 from ..animation_scripts.test import TestAnimation
+from acrylic import Color
 
 PLATFORM = config("PLATFORM")
 
@@ -53,8 +53,11 @@ class RGB():
 		# Test Animation
 		self.ta = TestAnimation(self.conn_bottom, self.matrix)
 
-	def set_pixel(self, x, y, c):
-		print("set pixel")
+	def set_pixel(self, x, y, c: Color):
+		# x, y position
+		# Color c
+		print(f"set pixel {x}, {y}, [{c.rgb.r}, {c.rgb.g}, {c.rgb.b}]")
+		self.frame_canvas.SetPixel(x, y, c.rgb.r, c.rgb.g, c.rgb.b)
 
 	def set_frame(self):
 		print("set frame")
