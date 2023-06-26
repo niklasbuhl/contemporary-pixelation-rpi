@@ -63,7 +63,7 @@ class RGB():
 		print("set frame")
 
 	def get_frame(self):
-		print(self.frame_canvas)
+		return self.frame_canvas
 	
 	def clear_frame(self):
 		print("clear frame")
@@ -73,7 +73,7 @@ class RGB():
 			self.sync()
 
 	def sync(self):
-		self.frame_canvas = self.matrix.SwapOnVSync(self.frame_canvas)
+		self.matrix.SwapOnVSync(self.frame_canvas)
 	
 	def start_animation(self):
 		try:

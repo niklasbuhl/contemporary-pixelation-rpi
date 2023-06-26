@@ -32,6 +32,10 @@ async def rgb_set_pixel(request: Request):
 def rgb_set_frame():
 	rgb.set_frame()
 
+# Get Frame
+@router.get("/frame")
+def rgb_set_frame():
+	return rgb.get_frame()
 
 # Sync Frame
 @router.post("/sync")
