@@ -72,7 +72,7 @@ class RGB():
 			self.frame_canvas.Clear()
 			self.sync()
 
-	def sync():
+	def sync(self):
 		self.frame_canvas = self.matrix.SwapOnVSync(self.frame_canvas)
 	
 	def start_animation(self):
