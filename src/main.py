@@ -1,21 +1,11 @@
 import uvicorn
 from app.app import app
-# import multiprocessing as mp
-# PLATFORM = config("PLATFORM")
+from decouple import config
 
-# if (PLATFORM == "mac"):
-# 	from p5 import *
-
-# def setup():
-# 	size(1024, 1024)
-# 	color_mode(HSB)
-
-# def draw():
-# 	background(0, 0, 255)
+HOST = config("HOST")
+PORT = config("PORT")
+RELOAD = config("RELOAD")
+LOG_LEVEL = config("LOG_LEVEL")
 
 if __name__ == '__main__':
-	# if (PLATFORM == "mac"):
-	# 	p5process = mp.Process(target=run)
-	# 	p5process.start()
-
-	uvicorn.run(app, host='0.0.0.0', port=80, log_level='info')
+	uvicorn.run(app, host=HOST, port=PORT, log_level=LOG_LEVEL, reload=RELOAD)
