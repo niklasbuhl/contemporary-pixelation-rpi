@@ -8,4 +8,4 @@ RELOAD = config("RELOAD")
 LOG_LEVEL = config("LOG_LEVEL")
 
 if __name__ == '__main__':
-	uvicorn.run("main:app", host=HOST, port=int(PORT), log_level=LOG_LEVEL, reload=bool(RELOAD))
+	uvicorn.run(app, host='0.0.0.0', port=8080, log_level='info', reload=False)
