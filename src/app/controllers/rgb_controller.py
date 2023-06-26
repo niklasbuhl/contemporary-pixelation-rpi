@@ -21,6 +21,12 @@ class RGB():
 
 		print("Init RGB Controller")
 
+		print(f"RGB_ROWS {RGB_ROWS}")
+		print(f"RGB_CHAIN_LENGTH {RGB_CHAIN_LENGTH}")
+		print(f"RGB_PARALLEL {RGB_PARALLEL}")
+		print(f"RGB_DISABLE_HARDWARE_PULSING {RGB_DISABLE_HARDWARE_PULSING}")
+		print(f"RGB_HARDWARE_MAPPING {RGB_HARDWARE_MAPPING}")
+		print(f"RGB_GPIO_SLOWDOWN {RGB_GPIO_SLOWDOWN}")
 
 		if(PLATFORM == "rpi"):
 			options = RGBMatrixOptions()
