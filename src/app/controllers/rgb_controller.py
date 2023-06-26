@@ -30,12 +30,12 @@ class RGB():
 
 		if(PLATFORM == "rpi"):
 			options = RGBMatrixOptions()
-			options.rows = RGB_ROWS
-			options.chain_length = RGB_CHAIN_LENGTH
-			options.parallel = RGB_PARALLEL
+			options.rows = int(RGB_ROWS)
+			options.chain_length = int(RGB_CHAIN_LENGTH)
+			options.parallel = int(RGB_PARALLEL)
 			options.disable_hardware_pulsing = RGB_DISABLE_HARDWARE_PULSING
 			options.hardware_mapping = RGB_HARDWARE_MAPPING
-			options.gpio_slowdown = RGB_GPIO_SLOWDOWN
+			options.gpio_slowdown = float(RGB_GPIO_SLOWDOWN)
 
 			self.matrix = RGBMatrix(options = options)
 			self.frame_canvas = self.matrix.CreateFrameCanvas()
