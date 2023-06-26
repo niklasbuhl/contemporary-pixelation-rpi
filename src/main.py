@@ -1,25 +1,22 @@
-import pusher
-import os
 import uvicorn
-from fastapi import FastAPI
+from app.app import app
+from decouple import config
+# import multiprocessing as mp
+# PLATFORM = config("PLATFORM")
 
-app = FastAPI()
+# if (PLATFORM == "mac"):
+# 	from p5 import *
 
-CHANNEL = os.environ.get("CHANNEL")
+# def setup():
+# 	size(1024, 1024)
+# 	color_mode(HSB)
 
-pusher_client = pusher.Pusher(
-    app_id=os.environ.get("APP_ID"),
-    key=os.environ.get("KEY"),
-    secret=os.environ.get("SECRET"),
-    cluster=os.environ.get("CLUSTER"),
-    ssl=True
-)
+# def draw():
+# 	background(0, 0, 255)
 
-@app.get("/")
-async def read_root():
-    pusher.trigger(CHANNEL, 'my-event', {'message': 'Hello, world!'})
-    return {"message": "Hello, World"}
+if __name__ == '__main__':
+	# if (PLATFORM == "mac"):
+	# 	p5process = mp.Process(target=run)
+	# 	p5process.start()
 
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+	uvicorn.run("main:app", host='0.0.0.0', port=8080, log_level='info', reload=True)
