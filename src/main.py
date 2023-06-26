@@ -1,6 +1,5 @@
 import uvicorn
 from app.app import app
-from decouple import config
 # import multiprocessing as mp
 # PLATFORM = config("PLATFORM")
 
@@ -19,4 +18,4 @@ if __name__ == '__main__':
 	# 	p5process = mp.Process(target=run)
 	# 	p5process.start()
 
-	uvicorn.run("main:app", host='0.0.0.0', port=80, log_level='info')
+	uvicorn.run(app, host='0.0.0.0', port=80, log_level='info')
