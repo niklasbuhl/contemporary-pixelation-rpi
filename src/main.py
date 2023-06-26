@@ -19,4 +19,4 @@ if __name__ == '__main__':
 	# 	p5process = mp.Process(target=run)
 	# 	p5process.start()
 
-	uvicorn.run("main:app", host='0.0.0.0', port=8080, log_level='info', reload=True)
+	uvicorn.run("main:app", host='0.0.0.0', port=80, log_level='info')
