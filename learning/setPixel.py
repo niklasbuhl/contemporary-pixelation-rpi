@@ -17,7 +17,7 @@ start = time.time()
 
 for x in range(32):
 	for y in range(32):
-		frame_canvas.SetPixel(x,y,random.randint(0, 255), random.randint(0, 255), random.randint(0, 9))
+		frame_canvas.SetPixel(x,y,random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
 matrix.SwapOnVSync(frame_canvas)
 
