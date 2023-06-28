@@ -24,3 +24,6 @@ matrix.SwapOnVSync(frame_canvas)
 end = time.time()
 
 print(f"run: ${end - start}")
+
+while True:
+	sleep(5)
