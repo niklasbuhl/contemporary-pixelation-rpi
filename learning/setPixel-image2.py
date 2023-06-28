@@ -24,7 +24,8 @@ while True:
 	start = time.time()
 	for y in range(height):
 		for x in range(width):
-			color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))  # RGB color value for white
+			# color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))  # RGB color value for white
+			color = (255,0,255)
 			image.putpixel((x, y), color)
 
 	matrix.SetImage(image)
