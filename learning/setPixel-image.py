@@ -24,18 +24,16 @@ color = (255, 255, 255)  # RGB color value for white
 image = Image.new("RGB", (width, height))
 
 for y in range(height):
-    for x in range(width):
-		
+	for x in range(width):
 		color = (randint(0, 255), randint(0, 255), randint(0, 255))  # RGB color value for white
-
 		image.putpixel((x, y), color)
 
 
 # Then scroll image across matrix...
 for n in range(-32, 33):  # Start off top-left, move off bottom-right
-    matrix.Clear()
-    matrix.SetImage(image, n, n)
-    time.sleep(0.05)
+	matrix.Clear()
+	matrix.SetImage(image, n, n)
+	time.sleep(0.05)
 
 end = time.time()
 
