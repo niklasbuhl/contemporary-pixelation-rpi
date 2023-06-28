@@ -7,7 +7,7 @@ options.rows = 32
 options.chain_length = 1
 options.parallel = 1
 options.disable_hardware_pulsing = True
-options.hardware_mapping = adafruit-hat
+options.hardware_mapping = "adafruit-hat"
 options.gpio_slowdown = 1
 
 matrix = RGBMatrix(options = options)
