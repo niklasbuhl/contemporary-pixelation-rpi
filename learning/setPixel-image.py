@@ -25,7 +25,7 @@ image = Image.new("RGB", (width, height))
 
 for y in range(height):
 	for x in range(width):
-		color = (randint(0, 255), randint(0, 255), randint(0, 255))  # RGB color value for white
+		color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))  # RGB color value for white
 		image.putpixel((x, y), color)
 
 
