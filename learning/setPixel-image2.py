@@ -12,9 +12,6 @@ options.gpio_slowdown = 1
 
 matrix = RGBMatrix(options = options)
 frame_canvas = matrix.CreateFrameCanvas()
-
-start = time.time()
-
 from PIL import Image
 
 # Create a new empty image with a white background
@@ -23,16 +20,14 @@ height = 32
 color = (255, 255, 255)  # RGB color value for white
 image = Image.new("RGB", (width, height))
 
-for y in range(height):
-	for x in range(width):
-		color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))  # RGB color value for white
-		image.putpixel((x, y), color)
-
-matrix.SetImage(image)
-
-end = time.time()
-
-print(f"run: ${end - start}")
-
 while True:
+	start = time.time()
+	for y in range(height):
+		for x in range(width):
+			color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))  # RGB color value for white
+			image.putpixel((x, y), color)
+
+	matrix.SetImage(image)
+	end = time.time()
+	print(f"run: ${end - start}")
 	time.sleep(0.05)
