@@ -12,18 +12,19 @@ options.gpio_slowdown = 1
 
 matrix = RGBMatrix(options = options)
 frame_canvas = matrix.CreateFrameCanvas()
-
-start = time.time()
-
-for x in range(32):
-	for y in range(32):
-		frame_canvas.SetPixel(x,y,random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
-
 matrix.SwapOnVSync(frame_canvas)
 
-end = time.time()
-
-print(f"run: ${end - start}")
-
 while True:
+
+	start = time.time()
+
+	for x in range(32):
+		for y in range(32):
+			frame_canvas.SetPixel(x,y,255, 0, 255)
+			# frame_canvas.SetPixel(x,y,random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+
+	end = time.time()
+
+	print(f"run: ${end - start}")
+
 	time.sleep(0.05)
