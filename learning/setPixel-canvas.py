@@ -20,8 +20,8 @@ while True:
 
 	for x in range(32):
 		for y in range(32):
-			frame_canvas.SetPixel(x,y,255, 0, 255)
-			# frame_canvas.SetPixel(x,y,random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+			# frame_canvas.SetPixel(x,y,255, 0, 255)
+			frame_canvas.SetPixel(x,y,random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
 
 	end = time.time()
 
